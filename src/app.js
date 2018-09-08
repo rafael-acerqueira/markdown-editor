@@ -18,6 +18,10 @@ class App extends Component {
       console.log(e.target.value)
     }
 
+    this.getMarkup = () => {
+      return { __html: this.state.value }
+    }
+
   }
 
   render () {
@@ -25,6 +29,7 @@ class App extends Component {
       <MarkdownEditor
         value={this.state.value}
         handleChange={this.handleChange}
+        getMarkup={this.getMarkup}
       />
     )
   }
