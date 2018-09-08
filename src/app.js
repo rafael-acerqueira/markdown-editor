@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
+import marked from 'marked'
 import MarkdownEditor from './markdown-editor'
 
 import 'normalize.css'
@@ -16,12 +17,11 @@ class App extends Component {
     }
 
     this.handleChange = (e) => {
-      this.setState({ value: e.target.value })
-      console.log(e.target.value)
+      this.setState({ value: e.target.value })      
     }
 
     this.getMarkup = () => {
-      return { __html: this.state.value }
+      return { __html: marked(this.state.value) }
     }
 
   }
