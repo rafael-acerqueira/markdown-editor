@@ -2,10 +2,16 @@
 
 import React, { Component } from 'react'
 import marked from 'marked'
+import highlight from 'highlight.js'
 import MarkdownEditor from './markdown-editor'
 
-import 'normalize.css'
 import './css/style.css'
+
+marked.setOptions({
+  highlight: code => {
+    return highlight.highlightAuto(code).value
+  }
+})
 
 class App extends Component {
 
@@ -17,7 +23,7 @@ class App extends Component {
     }
 
     this.handleChange = (e) => {
-      this.setState({ value: e.target.value })      
+      this.setState({ value: e.target.value })
     }
 
     this.getMarkup = () => {
