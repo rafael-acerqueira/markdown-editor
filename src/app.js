@@ -14,7 +14,6 @@ marked.setOptions({
 })
 
 class App extends Component {
-
   constructor (props) {
     super(props)
 
@@ -29,9 +28,7 @@ class App extends Component {
     this.getMarkup = () => {
       return { __html: marked(this.state.value) }
     }
-
   }
-
   render () {
     return (
       <MarkdownEditor
@@ -42,6 +39,5 @@ class App extends Component {
     )
   }
 }
-
 
 export default App
