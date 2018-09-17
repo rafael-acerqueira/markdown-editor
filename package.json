@@ -66,5 +66,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "standard": {
+    "globals": ["localStorage"]
   }
 }
