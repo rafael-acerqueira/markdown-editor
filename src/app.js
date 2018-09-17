@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import marked from 'marked'
-import MarkdownEditor from './markdown-editor'
+import MarkdownEditor from 'components/markdown-editor'
 
 import './css/style.css'
 
@@ -32,6 +32,10 @@ class App extends Component {
     this.getMarkup = () => {
       return { __html: marked(this.state.value) }
     }
+
+    this.handleSave = () => {
+      localStorage.setItem('md', this.state.value)
+    }
   }
 
   componentDidMount() {
@@ -45,6 +49,7 @@ class App extends Component {
         value={this.state.value}
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
+        handleSave={this.handleSave}
       />
     )
   }
