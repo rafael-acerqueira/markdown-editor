@@ -22,7 +22,7 @@ body {
   width: 100%;
 }
 
-.save {
+.header {
   height: 5vh;
   width: 100%;
   color: #FFF;
@@ -31,11 +31,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-}
-
-.save:hover {
-  background-color: #ccc;
-  color: #000
+  float: left;
 }
 
 .view {

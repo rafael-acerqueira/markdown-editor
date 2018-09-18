@@ -22,11 +22,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-      value: ''
+      value: '',
+      isSaving: false
     }
 
     this.handleChange = (e) => {
-      this.setState({ value: e.target.value })
+      this.setState({ value: e.target.value, isSaving: true })
     }
 
     this.getMarkup = () => {
@@ -35,6 +36,7 @@ class App extends Component {
 
     this.handleSave = () => {
       localStorage.setItem('md', this.state.value)
+      this.setState({ isSaving: false })
     }
   }
 
@@ -56,9 +58,9 @@ class App extends Component {
     return (
       <MarkdownEditor
         value={this.state.value}
+        isSaving={this.state.isSaving}
         handleChange={this.handleChange}
         getMarkup={this.getMarkup}
-        handleSave={this.handleSave}
       />
     )
   }
