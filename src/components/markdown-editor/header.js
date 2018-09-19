@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from 'components/button'
+
 const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
   <header className='header'>
     {isSaving !== null && (
@@ -9,8 +11,14 @@ const MarkdownEditorHeader = ({ isSaving, handleRemove, handleCreate }) => (
       </p>
     )}
 
-    <button onClick={handleCreate}>Criar novo</button>
-    <button onClick={handleRemove} className='remove-button'>Remover</button>
+    <Button onClick={handleCreate} kind='success'>
+      Criar novo
+    </Button>
+
+    <Button onClick={handleRemove} kind='danger'>
+      Remover
+    </Button>
+
   </header>
 )
 

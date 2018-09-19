@@ -1,0 +1,25 @@
+.button {
+  color: #FFF;
+  border: none;
+  height: 100%;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: pointer;
+
+}
+
+.button.-danger {
+  background-color: red;
+}
+
+.button.-danger:hover {
+  background-color: darkred;
+}
+
+.button.-success {
+  background-color: green;
+}
+
+.button.-success:hover {
+  background-color: darkgreen;
+}

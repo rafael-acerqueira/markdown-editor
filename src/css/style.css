@@ -37,18 +37,6 @@ body {
   float: left;
 }
 
-.remove-button {
-  background-color: red;
-  color: #FFF;
-  border: none;
-  height: 100%;
-  font-weight: bold;
-  margin-left: 5px;
-  cursor: pointer;
-  
-
-}
-
 .view {
   width: 50%;
   background: #333;
