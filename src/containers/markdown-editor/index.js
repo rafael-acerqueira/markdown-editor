@@ -6,10 +6,10 @@ import Files from './files'
 
 const MarkdownEditor = ({ value, handleChange, getMarkup, textareaRef, files, handleOpenFile, ...props }) => (
   <section>
-    <MarkdownEditorHeader className='header' {...props}/>
+    <MarkdownEditorHeader className='header' {...props} handleChange={handleChange}/>
     <Files files={files} handleOpenFile={handleOpenFile}/>
     <section className='editor'>
-      <textarea value={value} onChange={handleChange} autoFocus ref={textareaRef}/>
+      <textarea value={value} onChange={handleChange('value')} autoFocus ref={textareaRef}/>
       <article className='view' dangerouslySetInnerHTML={getMarkup()} />
     </section>
   </section>

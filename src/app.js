@@ -24,18 +24,21 @@ class App extends Component {
 
     this.clearState = () => ({
         value: '',
+        title: '',
         id: v4()
     })
 
     this.state = {
       ...this.clearState(),
-      isSaving: null,
-      title: '',
+      isSaving: null,      
       files: {}
     }
 
-    this.handleChange = (e) => {
-      this.setState({ value: e.target.value, isSaving: true })
+    this.handleChange = (field) => (e) => {
+      this.setState({
+        [field]: e.target.value,
+        isSaving: true
+      })
     }
 
     this.getMarkup = () => {
